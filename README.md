@@ -1,8 +1,13 @@
+# INSTALLER .BASHRC
+Le fichier se trouve à la racine (.bashrc), à mettre dans votre poste de travail: ~/
+
 # PREMIERES INSTRUCTIONS: 
+- sudo apt-get update
 - sudo apt install gnome-tweaks vim curl
 - sudo apt install git-all nodejs npm virtualbox virtualbox-ext-pack
+- sudo apt install sudo apt-get install qbittorrent
 - a partir de "ubuntu software" ou via wget ou encore curl:
-teams, zoom, skype, vscode,  
+teams, zoom, skype, vscode,  qtorrent
 wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb
 apt install ./teams_1.3.00.5153_amd64.deb ./zoom_amd64.deb 
@@ -15,7 +20,7 @@ apt install ./teams_1.3.00.5153_amd64.deb ./zoom_amd64.deb
 ou sudo systemctl status apache2
 - apt search php- | less
 
-(https://www.digitalocean.com/community/tutorials/comment-installer-la-pile-linux-apache-mysql-php-lamp-sur-un-serveur-ubuntu-18-04-fr)
+(https://www.digitalocean.com/community/tutor qials/comment-installer-la-pile-linux-apache-mysql-php-lamp-sur-un-serveur-ubuntu-18-04-fr)
 
 
 
