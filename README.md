@@ -2,11 +2,33 @@
 Le fichier se trouve à la racine (.bashrc), à mettre dans votre poste de travail: ~/
 
 # PREMIERES INSTRUCTIONS: 
+### ÇA A L'AIR DE RIEN MAIS C'EST IMPORTANT
 - sudo apt-get update
+### JE NE ME RAPPEL PLUS C'EST QUOI "gnome-tweaks"....
 - sudo apt install gnome-tweaks vim curl
+### vscode
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt update
+sudo apt install code
+---
+=> [other instructions here](https://www.how2shout.com/linux/3-ways-install-visual-studio-code-in-ubuntu-using-terminal/)
+### WEBDEV ENVIRONMENT
 - sudo apt install git-all nodejs npm virtualbox virtualbox-ext-pack
-- sudo apt install sudo apt-get install qbittorrent
-- a partir de "ubuntu software" ou via wget ou encore curl:
+### UX ENVIRONMENT
+- sudo apt install xfce4-clipman-plugin 
+=> [lien source](https://doc.ubuntu-fr.org/presse-papier)
+=> [lien ver "clipman usage advises"](https://www.grimoire-command.es/2019/xfce4-clipman_usage.html)
+=> [d'autre outils de presse-papiers...si jamais](https://www.google.com/search?q=xfce+clipman+comment+afficher+l%27historique&sxsrf=ALeKk02og3F03ALVxYdbMCQ3ukc8qSVKig%3A1621843303157&ei=Z12rYK6ACfTggweBiYLABA&oq=xfce+clipman+comment+afficher+l%27historique&gs_lcp=Cgdnd3Mtd2l6EAM6BwgAEEcQsANQ2fUXWNmaGGCunRhoBHACeACAAXmIAYkHkgEEMTAuMZgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwjuz9yP7eHwAhV08OAKHYGEAEgQ4dUDCA4&uact=5)
+- (pas encore regardé vraiment..) ??pour lire et écrire le japonais??: [wiki](https://fr.wikibooks.org/wiki/Lire_et_%C3%A9crire_le_japonais_sous_Debian)
+### SOFTWARES ENVIRONMENT
+- sudo apt-get install qbittorrent
+- sudo apt install gnome-control-center gnome-online-accounts
+then, XDG_CURRENT_DESKTOP=GNOME gnome-control-center, aller sur comptes en ligne, choisir google, s'identifier et c'est fini
+=> [lien source](https://www.linuxuprising.com/2018/07/mounting-google-drive-on-xfce-or-mate.html)
+##### logiciels de retouche vidéo
+- sudo apt install handbrake shotcut 
+##### en utilisant la logitèque
 teams, zoom, skype, vscode,  qtorrent
 wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb
