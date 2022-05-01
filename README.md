@@ -71,6 +71,17 @@ ou sudo systemctl status apache2
 - formater un périphérique:
 => [mkfs](https://www.malekal.com/mkfs-formater-et-creer-un-systeme-de-fichiers-ext4-ntfs-fat-sur-linux/)
 
+---
+
+## TEMPORY SOLVES
+### PROBLEME DE GRUB
+
+- si un probleme de grub montre le bout de son nez après un reboot où le dual boot ne marcherait plus, utiliser les instructions du lien suivant pour tenter de recouvrir la partition linux(ou win..j'ai pas encore testé, là je n'ai monté qu'un seul disk (sda) et xa a marché, il me faut continuer pour etre certain du fonctionnement de cette méthode !) ainsi perdue: 
+=> [lien](https://www.howtogeek.com/114884/how-to-repair-grub2-when-ubuntu-wont-boot/)
+
+
+
+
 
 
 
