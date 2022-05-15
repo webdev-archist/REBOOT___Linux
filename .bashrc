@@ -142,6 +142,8 @@ alias sb="sourceb"
 alias xdg="xdg-open . "
 alias lss="ls -alt "
 alias cdd="cd - "
+alias psg="ps -aux | grep "
+alias k="kill -9  "
 #NODEJS ALIASES
 alias c="code . "
 alias n="npm run "
@@ -160,8 +162,11 @@ alias nr="npm remove "
 alias lh="localserver "
 #LES COMMANDE D'ARCHIVAGE "tar": https://www.sebastien-gandossi.fr/blog/comment-creer-et-extraire-une-archive-tar-tar-gz-tar-bz2-ou-tar-xz
 alias rmd="rm -rf "
+alias t_help="echo 'https://fr.wikihow.com/archiver-un-r%C3%A9pertoire-avec-la-commande-%C2%AB-tar-%C2%BB' "
 alias t="tar cvf "
 alias t_="tar xvf "
+alias z="echo 'CMD EXAMPLE: 
+zip nom_de_l-archive_zip *....files_&_dirs_to_zip...*' "
 # ------------------------------------------------------------------
 #POUR SE DÉPLACER DANS L'ARCHITECTURE DE FICHIER --------------------------
 alias bt="go_bt ; xdg ; code . "
@@ -182,7 +187,6 @@ alias gflow="gb -m master main ; gb hotfix ; gchb develop ; gb release ; gb feat
 alias gflowp="gb -m master main ; gmm ; gp ; gb hotfix ; gp ; gchb develop ; gp ; gb release ; gp ; gb features ; gp ; gmm "
 alias gflowpF="gmm ; gpF ; gdev ; gpF ; ghot ; gpF ; grel ; gpF ; gfea ; gpF  "
 alias ginitflow="git init ; npm init -y ; echo '# TITRE REPO...'>README.md ; gac 'IC' ; gflow "
-alias gb="git branch "
 ###RESET
 alias _grh="git reset --hard HEAD "
 alias _grs="git reset --soft HEAD "
@@ -211,16 +215,33 @@ alias gf="git fetch "
 alias gf_="git fetch origin "
 ###REMOTE
 alias gr="git remote -v "
+alias grrename="git remote set-url origin "
+alias grrename_="git remote set-url "
 alias gra="git remote add "
 alias graa_="git remote add origin "
 alias grau_="git remote add upstream "
 alias grr="git remote remove origin "
 ###BRANCHES
 alias gb="git branch "
+alias gbr="echo 'après cette commande vous devrez utiliser gbr_ pour réinitialiser la branche distante avec le nouveau nom de branhce attribué ici' ; echo 'voici le lien: 
+https://fr.w3docs.com/snippets/git/how-to-rename-git-local-and-remote-branches-1.html' ; git branch -m "
+alias gbr_="git push origin -u "
 alias gba="git branch -a "
 alias gbd="git branch -D "
-alias gbdR="git push origin --delete "
+alias gbdefault="echo 'go this url to see the command: 
+https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch' "
+alias gbD="git push origin --delete "
 alias gball="for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done "
+###TAG
+alias gt_="echo 'des liens utiles que j'ai glané:
+https://devconnected.com/how-to-delete-local-and-remote-tags-on-git/
+https://devconnected.com/how-to-list-git-tags/' "
+alias gt="git tag "
+alias gta="gt "
+alias gtl="git tag -l "
+alias gtp="gpo "
+alias gtr="git tag -d "
+alias gtR="gpo --delete "
 ###REBASE
 alias greb="git rebase "
 alias grebc="ga ; git rebase --continue "
@@ -245,6 +266,7 @@ alias gacp="ga ; gc ; gp "
 alias gacpF="ga ; gcm ; gpF "
 alias gac_no="ga ; gc "
 alias gacm="ga ; gcm "
+alias gacmpf="gacm ; gp "
 alias gacmpF="gacm ; gpF "
 ###DIFF
 alias gd="git diff "
@@ -252,11 +274,15 @@ alias gd="git diff "
 alias gpu="git pull "
 alias gac_a="ga ; gc_a "
 alias gac_ano="ga ; gc_ano "
+alias gac_anO="ga ; gc_ano ; gP "
 alias gac_anoF="ga ; gc_ano ; gp -f "
 alias gp="git push "
-alias gpF="git push -f "
+alias gP="git push -f "
+alias gpo="gp origin "
+alias gpF="gP "
 alias gp_="git push --set-upstream origin "
-alias gpa="git push --all origin "
+alias gpall="git push --all origin "
+alias gpup="git push upstream "
 alias gacp="ga ; gcm ; gp "
 alias gacpno="ga ; gc_ano ; gp "
 alias gl="git log "
@@ -276,15 +302,36 @@ alias gsub="git submodule "
 alias gsuba="gsub add "
 alias gsubu="gsub update "
 alias gsubu_="gsub update --init "
+alias gsubr="echo '- https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule#answer-1260982
+- https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial#Removal
+
+To remove a submodule you need to:
+
+'
+echo '1. Delete the relevant section from the .gitmodules file. '
+echo '2. Stage the .gitmodules changes:
+git add .gitmodules '
+echo '3. Delete the relevant section from .git/config. '
+echo '4. Remove the submodule files from the working tree and index:
+git rm --cached path_to_submodule (no trailing slash). '
+echo '5. Remove the submodules .git directory:
+rm -rf .git/modules/path_to_submodule '
+echo '6. Commit the changes:
+git commit -m ___Removed submodule (name)___ '
+echo '7. Delete the now untracked submodule files:
+rm -rf path_to_submodule ' "
 # ------------------------------------------------------------------
 # ------------------------------------------------------------------
 ### GIT MANIPULATIONS
 alias g_webdev="git config --global user.name 'webdev-archist' ; git config --global user.email 'webdev.archist@gmail.com' "
 alias g_archist="git config --global user.name 'achicyr' ; git config --global user.email 'hi.cyril@gmail.com' "
+alias g_yasushi="git config --global user.name '康さん' ; git config --global user.email 'yasushi.jlpt@gmail.com' "
 alias g_ssh_webdev="cp ~/ssh/webdev/id_rsa ~/.ssh/id_rsa ; cp ~/ssh/webdev/id_rsa.pub ~/.ssh/id_rsa.pub "
 alias g_ssh_archist="cp ~/ssh/archist/id_rsa ~/.ssh/id_rsa ; cp ~/ssh/archist/id_rsa.pub ~/.ssh/id_rsa.pub "
+alias g_ssh_yasushi="cp ~/ssh/yasushi/id_rsa ~/.ssh/id_rsa ; cp ~/ssh/yasushi/id_rsa.pub ~/.ssh/id_rsa.pub "
 alias garchist="g_archist ; g_ssh_archist "
 alias gwebdev="g_webdev ; g_ssh_webdev "
+alias gyasushi="g_yasushi ; g_ssh_yasushi "
 ### GIT BASE CONFIGS
 alias gitInitConfig="echo https://qastack.fr/programming/37770467/why-do-i-have-to-git-push-set-upstream-origin-branch ; git config --global --add push.default current ; echo 'git config --global user.name webdev ; git config --global user.email webdev.archist@gmail.com ' "
 ### GIT CONFIG
@@ -313,3 +360,9 @@ git pull origin master
 '
 # ------------------------------------------------------------------
 # ------------------------------------------------------------------
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/hikari/Téléchargements/google-cloud-sdk/path.bash.inc' ]; then . '/home/hikari/Téléchargements/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/hikari/Téléchargements/google-cloud-sdk/completion.bash.inc' ]; then . '/home/hikari/Téléchargements/google-cloud-sdk/completion.bash.inc'; fi

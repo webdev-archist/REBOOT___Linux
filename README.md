@@ -43,12 +43,12 @@ then, XDG_CURRENT_DESKTOP=GNOME gnome-control-center, aller sur comptes en ligne
 ##### logiciels de retouche vidéo
 - sudo apt install handbrake shotcut 
 ##### en utilisant la logitèque (.......contenu à modifier, pas pertinent..)
-teams, zoom, skype, vscode,  qtorrent
+teams, zoom, skype, vscode, jdownloader
 wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb
 apt install ./teams_1.3.00.5153_amd64.deb ./zoom_amd64.deb 
 
-# INSTALLER LAMP: 
+## INSTALLER LAMP: 
 - sudo apt install apache2 mysql-server php php-cli libapache2-mod-php php-mysql
 - sudo mysql_secure_installation
 - sudo nano /etc/apache2/mods-enabled/dir.conf
@@ -59,6 +59,16 @@ ou sudo systemctl status apache2
 (https://www.digitalocean.com/community/tutor qials/comment-installer-la-pile-linux-apache-mysql-php-lamp-sur-un-serveur-ubuntu-18-04-fr)
 
 
+## INSTALLER GCLOUD POUR GOOGLE CLOUD REPOSITORIES
+
+bon , il y a plein de truc à faire, je n'ai pas encore vraiment compris comment tout marche, mais une erreur s'est produite dans le terminal, m'empechant d'utiliser apt-get.
+=> du coup je viens de trouver la solution etje la sauvegarde, au moins ça c'est fait!
+- comment rétablir apt-get: https://stackoverflow.com/questions/56679191/apt-get-is-broken-after-install-google-cloud-sdk-on-ubuntu-18-04-lts#answer-56705181
+
+## ABOUT SOURCES AND APT-GET
+- [lien easylinuxtipsproject](]https://easylinuxtipsproject.blogspot.com/p/sources.html): 
+    - xed admin:///etc/apt/sources.list.d/official-package-repositories.list
+    - sudo mintupdate-cli upgrade -r
 
 
 ## ASTUCES (ux):
