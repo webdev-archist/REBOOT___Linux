@@ -46,6 +46,8 @@ then, XDG_CURRENT_DESKTOP=GNOME gnome-control-center, aller sur comptes en ligne
 teams, zoom, skype, vscode, jdownloader
 wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb
+wget https://download.edrawsoft.com/archives/edrawmind_9.0.10_en_x86_64.deb?_gl=1*kpwdky*_ga*NTU3Mzc2MDY4LjE2NTcyNDc5NTg.*_ga_24WTSJBD5B*MTY1NzI0Nzk1OC4xLjEuMTY1NzI0ODU0Ni42MA..&_ga=2.18566073.1423041095.1657247958-557376068.1657247958
+=>https://www.edrawsoft.com/download-edrawmind.html#linux
 apt install ./teams_1.3.00.5153_amd64.deb ./zoom_amd64.deb 
 
 ## INSTALLER LAMP: 
@@ -71,13 +73,13 @@ bon , il y a plein de truc à faire, je n'ai pas encore vraiment compris comment
     - sudo mintupdate-cli upgrade -r
 
 
-## ASTUCES (ux):
+## ASTUCES (linux):
 - afficher les fichiers/dossiers cachés => dans le dossier, faire: Ctrl+h
 ## ASTUCES (bash):
 - voir la corbeille: ls -a ~/.Trash
 => supprimer le contenu de la corbeille: rm -r ~/.Trash
 => autre lien concernant la [corbeille](https://forum.ubuntu-fr.org/viewtopic.php?id=12650)
-- lister les périphérique du pc: lsblk
+- lister les périphérique du pc: lsblk, ou encore, df
 - formater un périphérique:
 => [mkfs](https://www.malekal.com/mkfs-formater-et-creer-un-systeme-de-fichiers-ext4-ntfs-fat-sur-linux/)
 
