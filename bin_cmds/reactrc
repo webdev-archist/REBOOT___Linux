@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "hey yooo $0"
+echo "hello $1, how are U today ?"
+echo "ookay fine! done! $2"
+echo ""
+echo "IL FAUT QUE J'IMPLEMENTE DES CONDITIONS POUR CHANGER LE FONCTIONNEMENT DE CETTE COMMANDE "
+echo "DONC TYPIQUEMENT PERMETTRE DE RAJOUTER DES PARAMÈTRES QUI PERMETTRONT À LA COMMANDER DE DÉFINIR LE TYPE D'ACTION QU'IL EFFECTUERA "
+
+
+
+#mkdir src/composants; mkdir src/assets; mkdir src/pages;
+#mkdir src/pages/Home
+git clone git@github.com:achicyr/SCSS___system7-1.git src/assets/scss
+rm -rf src/assets/scss/.git
+git clone git@github.com:achicyr/react_base_structure.git to_delete
+cd to_delete
+git checkout develop
+cd ..
+mv ./to_delete/* ./src
+rm -rf to_delete
+rm App.js App.test.js App.css index.css setupTests.js
+mv ./src/package.json .
+mv ./src/package-lock.json .
+npm install
+npm run start

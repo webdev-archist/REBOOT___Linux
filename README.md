@@ -2,6 +2,8 @@
 
 ---
 
+## SOUS-TITRES VIDÉO
+- http://www.franglish.fr/share/tuto_doubles_sous_titres_franglish.pdf
 ## INSTALLER .BASHRC
 Le fichier se trouve à la racine (.bashrc), à mettre dans votre poste de travail: ~/
 
@@ -15,6 +17,11 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
 sudo apt install code
+### yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install yarn
 ---
 => [other instructions here](https://www.how2shout.com/linux/3-ways-install-visual-studio-code-in-ubuntu-using-terminal/)
 ### REBOOTING (LINUX's RUFUS ALTERNATIVES)
@@ -43,11 +50,12 @@ then, XDG_CURRENT_DESKTOP=GNOME gnome-control-center, aller sur comptes en ligne
 ##### logiciels de retouche vidéo
 - sudo apt install handbrake shotcut 
 ##### en utilisant la logitèque (.......contenu à modifier, pas pertinent..)
-teams, zoom, skype, vscode, jdownloader
+teams, zoom, skype, vscode, jdownloader, 4kdownload
 wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb
 wget https://download.edrawsoft.com/archives/edrawmind_9.0.10_en_x86_64.deb?_gl=1*kpwdky*_ga*NTU3Mzc2MDY4LjE2NTcyNDc5NTg.*_ga_24WTSJBD5B*MTY1NzI0Nzk1OC4xLjEuMTY1NzI0ODU0Ni42MA..&_ga=2.18566073.1423041095.1657247958-557376068.1657247958
 =>https://www.edrawsoft.com/download-edrawmind.html#linux
+wget https://dl.4kdownload.com/app/4kvideodownloader_4.21.1-1_amd64.deb?source=website
 apt install ./teams_1.3.00.5153_amd64.deb ./zoom_amd64.deb 
 
 ## INSTALLER LAMP: 
