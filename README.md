@@ -4,19 +4,24 @@
 
 ## SOUS-TITRES VIDÉO
 - http://www.franglish.fr/share/tuto_doubles_sous_titres_franglish.pdf
-## INSTALLER .BASHRC
-Le fichier se trouve à la racine (.bashrc), à mettre dans votre poste de travail: ~/
 
 ## PREMIERES INSTRUCTIONS: 
 ### ÇA A L'AIR DE RIEN MAIS C'EST IMPORTANT
 - sudo apt-get update
+## INSTALLER .BASHRC
+Le fichier se trouve à la racine (.bashrc), à mettre dans votre poste de travail: ~/
+### WEBDEV ENVIRONMENT
+- sudo apt install git-all nodejs npm virtualbox virtualbox-ext-pack
+- concernant le dossier ssh, le dézippé, puis le copié-coller dans ~/, enfin définir le fichier id_rsa avec: chmod 600
 ### JE NE ME RAPPEL PLUS C'EST QUOI "gnome-tweaks"....
 - sudo apt install gnome-tweaks vim curl
 ### vscode
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+- wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
 sudo apt install code
+- voici le repo des snippets et kbsc: https://github.com/webdev-archist/vscode_snippets_keybordSC_etc
+
 ### yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -33,8 +38,6 @@ sudo apt install yarn
 => [download link](https://alternativeto.net/software/rufus/?platform=linux): 
 => et les [instructions](https://squadguide.net/fr/rufus-alternatives-8-meilleurs-logiciels-de-demarrage-usb-pour-linux#8_Ventoy), ou dans le readme présent dans le dossier téléchargé.
 => Une fois la commande lancée (sudo sh Ventoy2Disk.sh { -i | -I | -u } /dev/sdX   sdX is the USB device, for example /dev/sdb.), il ne reste plus qu'à copier l'ISO dans le périphérique et le tour est joué (l'iso est alors monté sur la clé !)
-### WEBDEV ENVIRONMENT
-- sudo apt install git-all nodejs npm virtualbox virtualbox-ext-pack
 ### UX ENVIRONMENT
 - sudo apt install xfce4-clipman-plugin 
 => [lien source](https://doc.ubuntu-fr.org/presse-papier)
@@ -50,7 +53,7 @@ then, XDG_CURRENT_DESKTOP=GNOME gnome-control-center, aller sur comptes en ligne
 ##### logiciels de retouche vidéo
 - sudo apt install handbrake shotcut 
 ##### en utilisant la logitèque (.......contenu à modifier, pas pertinent..)
-teams, zoom, skype, vscode, jdownloader, 4kdownload
+teams, zoom, skype, vscode, jdownloader, 4kdownload, obs studio, 
 wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb
 wget https://download.edrawsoft.com/archives/edrawmind_9.0.10_en_x86_64.deb?_gl=1*kpwdky*_ga*NTU3Mzc2MDY4LjE2NTcyNDc5NTg.*_ga_24WTSJBD5B*MTY1NzI0Nzk1OC4xLjEuMTY1NzI0ODU0Ni42MA..&_ga=2.18566073.1423041095.1657247958-557376068.1657247958
