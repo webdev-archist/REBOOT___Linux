@@ -1,0 +1,31 @@
+#!/bin/bash
+
+case $1 in 
+	"g")
+		git clone git@github.com:achicyr/backend_base_structure.git backend ; cd backend ; npm install ; echo "PORT=3012\r\nAPP_SECRET=\"THIS_IS_TOP_SECRET\"" > .env
+		;;
+	"gstruct")
+		mkdir controllers models routes middlewares images
+		;;
+	"mrc")
+		cp ./_/controllers/draft.js ./controllers/${2}.js ; cp ./_/routes/draft.js ./routes/${2}.js ; cp ./_/models/Draft.js ./models/$(sed -r 's/(^|-)(\w)/\U\2/g' <<<"$2").js ;
+	       	sed -i "s/draft/${2}/gi" controllers/${2}.js ;   sed -i "s/Draft/$(sed -r 's/(^|-)(\w)/\U\2/g' <<<"$2")/gi" controllers/${2}.js ;   sed -i "s/draft/${2}/gi" routes/${2}.js ;   sed -i "s/Draft/$(sed -r 's/(^|-)(\w)/\U\2/g' <<<"$2")/gi" routes/${2}.js ;   sed -i "s/draft/${2}/gi" models/$(sed -r 's/(^|-)(\w)/\U\2/g' <<<"$2").js ;   sed -i "s/Draft/$(sed -r 's/(^|-)(\w)/\U\2/g' <<<"$2")/gi" models/$(sed -r 's/(^|-)(\w)/\U\2/g' <<<"$2").js ;
+		echo "VOUS DEVEZ MAINTENANT RAJOUTER LA ROUTE SUIVANTE DANS VOTRE SERVEUR EXPRESS app.js:
+#		const post = require('./routes/post')
+#		app.use('/api/post', postRoutes)";
+		;;
+	"mrc_")
+		touch routes/${2}.js;touch controllers/${2}.js;touch models/${2}.js;
+		;;
+	*)
+		echo "VOUS N'AVEZ PAS ENTRÉ DE PARAMÈTRE.
+		VOICI LES PARAMÈTRES POSSSIBLES:
+		- g
+		- gstruct
+		- mrc
+		- mrc_
+		"
+esac
+
+
+

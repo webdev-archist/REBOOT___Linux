@@ -1,26 +1,52 @@
 #!/bin/bash
 
-echo "hey yooo $0"
-echo "hello $1, how are U today ?"
-echo "ookay fine! done! $2"
-echo ""
-echo "IL FAUT QUE J'IMPLEMENTE DES CONDITIONS POUR CHANGER LE FONCTIONNEMENT DE CETTE COMMANDE "
-echo "DONC TYPIQUEMENT PERMETTRE DE RAJOUTER DES PARAMÈTRES QUI PERMETTRONT À LA COMMANDER DE DÉFINIR LE TYPE D'ACTION QU'IL EFFECTUERA "
+#echo "hey yooo $0"
+#echo "hello $1, how are U today ?"
+#echo "ookay fine! done! $2"
+#echo ""
+#echo "IL FAUT QUE J'IMPLEMENTE DES CONDITIONS POUR CHANGER LE FONCTIONNEMENT DE CETTE COMMANDE "
+#echo "DONC TYPIQUEMENT PERMETTRE DE RAJOUTER DES PARAMÈTRES QUI PERMETTRONT À LA COMMANDER DE DÉFINIR LE TYPE D'ACTION QU'IL EFFECTUERA "
 
+echo "CETTE COMMANDE DOIT ETRE APPELÉ DANS UN DOSSIER CRA, CAR IL Y GÉNÈRE LE CONTENU DU DOSSIER ./src/"
 
+case $1 in
+	"g")
+		#mkdir src/composants; mkdir src/assets; mkdir src/pages;
+		#mkdir src/pages/Home
+		npx create-react-app frontend_react 
+		cd frontend_react 
+#		git submodule add git@github.com:achicyr/SCSS___system7-1.git src/assets/scss
+#		rm -rf src/assets/scss/.git
+		git rm -rf src
+		rm -rf src
+		git clone git@github.com:achicyr/react_base_structure.git src
+		cd src 
+		git checkout develop
+		git submodule update --init
+	       	git submodule update
+		rm -rf .git
+		cd assets/scss
+		git checkout develop
+		rmd .git
+		cd ../../../
+#		mv ./to_delete ./src
+#		rm -rf to_delete
+#		rm App.js App.test.js App.css index.css setupTests.js
+		cp ./src/package.json .
+#		mv ./src/package-lock.json .
+		npm install
 
-#mkdir src/composants; mkdir src/assets; mkdir src/pages;
-#mkdir src/pages/Home
-git clone git@github.com:achicyr/SCSS___system7-1.git src/assets/scss
-rm -rf src/assets/scss/.git
-git clone git@github.com:achicyr/react_base_structure.git to_delete
-cd to_delete
-git checkout develop
-cd ..
-mv ./to_delete/* ./src
-rm -rf to_delete
-rm App.js App.test.js App.css index.css setupTests.js
-mv ./src/package.json .
-mv ./src/package-lock.json .
-npm install
-npm run start
+		if ! [[ -z "$1" ]] && [ $2 == "then" ]; then
+			npm run start
+		fi
+
+		;;
+	"teste")
+		echo "je suis un test"
+		;;
+	*)
+		echo "au paramètre entré... voici les paramètres de cette commande"
+		echo "g"
+		echo "c'est tout, bye bye"
+		;;
+esac
