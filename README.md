@@ -13,8 +13,18 @@ Le fichier se trouve à la racine (.bashrc), à mettre dans votre poste de trava
 
 ## WEBDEV ENVIRONMENT
 
+### JAVASCRIPT: 
+#### nodejs: 
+- sudo apt install nodejs npm 
+- concernant le dossier ssh, le dézippé, puis le copié-coller dans ~/, enfin définir le fichier id_rsa avec: chmod 600
+#### yarn: 
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install yarn
+
 ### SOFTWARES: 
-- sudo apt install virtualbox virtualbox-ext-pack qbittorrent gnome-control-center gnome-online-accounts
+- sudo apt install git-all virtualbox virtualbox-ext-pack qbittorrent gnome-control-center gnome-online-accounts vim curl
 - then, XDG_CURRENT_DESKTOP=GNOME gnome-control-center, aller sur comptes en ligne, choisir google, s'identifier et c'est fini
 => [lien source](https://www.linuxuprising.com/2018/07/mounting-google-drive-on-xfce-or-mate.html)
 #### vscode: 
@@ -25,45 +35,56 @@ sudo apt install code
 - voici le repo des snippets et kbsc: https://github.com/webdev-archist/vscode_snippets_keybordSC_etc
 => [other instructions here](https://www.how2shout.com/linux/3-ways-install-visual-studio-code-in-ubuntu-using-terminal/)
 #### logiciels de retouche vidéo: 
-- sudo apt install handbrake shotcut OBS_Studio
+- sudo add-apt-repository ppa:obsproject/obs-studio
+- sudo apt install gimp handbrake shotcut obs-studio 
 #### ux environment: 
 - sudo apt install xfce4-clipman-plugin 
 => [lien source](https://doc.ubuntu-fr.org/presse-papier)
 => [lien ver "clipman usage advises"](https://www.grimoire-command.es/2019/xfce4-clipman_usage.html)
 => [d'autre outils de presse-papiers...si jamais](https://www.google.com/search?q=xfce+clipman+comment+afficher+l%27historique&sxsrf=ALeKk02og3F03ALVxYdbMCQ3ukc8qSVKig%3A1621843303157&ei=Z12rYK6ACfTggweBiYLABA&oq=xfce+clipman+comment+afficher+l%27historique&gs_lcp=Cgdnd3Mtd2l6EAM6BwgAEEcQsANQ2fUXWNmaGGCunRhoBHACeACAAXmIAYkHkgEEMTAuMZgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwjuz9yP7eHwAhV08OAKHYGEAEgQ4dUDCA4&uact=5)
 - (pas encore regardé vraiment..) ??pour lire et écrire le japonais??: [wiki](https://fr.wikibooks.org/wiki/Lire_et_%C3%A9crire_le_japonais_sous_Debian)
-=> Sinon utiliser l'installation proposée par l'OS dans 'méthode de saisie'
-#### en utilisant la logitèque (.......contenu à modifier, pas pertinent..): 
-steam????
-whatsapp????
-teams, zoom, skype, vscode, jdownloader, 4kdownload, obs studio, 
-wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
-wget https://zoom.us/client/latest/zoom_amd64.deb
+=> Sinon utiliser l'installation proposée par l'OS dans 'méthode de saisie', qui une fois installé indique d'aller ajouter la méthode de saisie Mozc dans  l'écran de configuration de Fcitx
+#### autres logs en utilisant apt, snap, ou flatpak: 
+- sudo apt install steam-devices
+- flatpak: https://doc.ubuntu-fr.org/flatpak      ou      logitheque flatpak: https://flathub.org/apps
+ou bien exécuter dans terminal: 
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+- snap: authoriser l'installation de snapd sur >mint20: https://www.numetopia.fr/comment-installer-des-paquets-snap-sur-linux-mint/
+ou bien exécuter dans terminal: 
+sudo mv /etc/apt/preferences.d/nosnap.pref /etc/apt/preferences.d/nosnap.pref.bak
+sudo apt install snapd
+sudo reboot
+puis éventuellement installer le gestionnaire graphiue de snap: "sudo snap install snap-store"
+- snap install zoom-client
+- snap install skype --classic
+ou: flatpak install --from https://flathub.org/repo/appstream/com.skype.Client.flatpakref -y
+- snap install teams-for-linux
+ou: flatpak install https://dl.flathub.org/repo/appstream/com.github.IsmaelMartinez.teams_for_linux.flatpakref -y
+- snap install whatsapp-for-linux
+#### en utilisant la logitèque (.......contenu à modifier, pas pertinent..):
+jdownloader
 wget https://download.edrawsoft.com/archives/edrawmind_9.0.10_en_x86_64.deb?_gl=1*kpwdky*_ga*NTU3Mzc2MDY4LjE2NTcyNDc5NTg.*_ga_24WTSJBD5B*MTY1NzI0Nzk1OC4xLjEuMTY1NzI0ODU0Ni42MA..&_ga=2.18566073.1423041095.1657247958-557376068.1657247958
 =>https://www.edrawsoft.com/download-edrawmind.html#linux
 wget https://dl.4kdownload.com/app/4kvideodownloader_4.21.1-1_amd64.deb?source=website
-apt install ./teams_1.3.00.5153_amd64.deb ./zoom_amd64.deb 
-### JAVASCRIPT: 
-#### nodejs: 
-- sudo apt install git-all nodejs npm 
-- concernant le dossier ssh, le dézippé, puis le copié-coller dans ~/, enfin définir le fichier id_rsa avec: chmod 600
-#### yarn: 
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update
-sudo apt install yarn
 ### LAMP: 
 (https://www.digitalocean.com/community/tutorials/comment-installer-la-pile-linux-apache-mysql-php-lamp-sur-un-serveur-ubuntu-18-04-fr)
 - sudo apt install apache2 mysql-server php php-cli libapache2-mod-php php-mysql
-- sudo mysql_secure_installation
+- (facultatif) sudo mysql_secure_installation
 - sudo nano /etc/apache2/mods-enabled/dir.conf
+Déplacer l'occurrence "index.php" à la première position après la spécification DirectoryIndex
 - sudo systemctl restart apache2
 ou sudo systemctl status apache2
-- apt search php- | less
+- pour voir les modules supplémentaires qui peuvent être installés: 
+apt search php- | less
+puis pour les installer, un simple:    sudo apt install nom_du_module_php
+ou pour avoir plus d'info sur le module en question:    apt show 
+- enfin, le dossier de travail se trouve: 
+/var/www/html/
+il suffira juste de lancer "localhost" dans le navigateur
 ### PYTHON: 
 - sudo apt install python3 python3-pip
 ### JE NE ME RAPPEL PLUS C'EST QUOI "gnome-tweaks"....
-- sudo apt install gnome-tweaks vim curl
+- sudo apt install gnome-tweaks 
 
 ---
 
