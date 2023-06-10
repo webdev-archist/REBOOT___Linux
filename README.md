@@ -13,15 +13,43 @@ Le fichier se trouve à la racine (.bashrc), à mettre dans votre poste de trava
 
 ## WEBDEV ENVIRONMENT
 
+
+### APT PACKAGES: 
+- sudo apt-get update
+- sudo apt-get install mysql-client libmysqlclient-dev
+=> mysql: https://www.ionos.com/digitalguide/server/know-how/use-mysql-with-ruby-on-rails/
+
 ### JAVASCRIPT: 
 #### nodejs: 
-- sudo apt install nodejs npm 
+- nodejs: 
+https://github.com/nodesource/distributions#debinstall
+Node.js v18.x: 
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 - concernant le dossier ssh, le dézippé, puis le copié-coller dans ~/, enfin définir le fichier id_rsa avec: chmod 600
 #### yarn: 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update
 sudo apt install yarn
+
+### RUBY: https://docs.google.com/spreadsheets/d/1Qd4R2oJZmw3Qi5X207j_BldoCBVEAlAKqHrBeXsJXGk/edit#gid=0
+https://www.ruby-lang.org/en/documentation/installation/
+https://www.brightbox.com/docs/ruby/ubuntu/
+- sudo apt-get install ruby-full
+=> LEARN RUBY
+https://ruby-doc.org/3.2.0/
+https://devdocs.io/ruby/
+=> youtube grafikart playlist: https://www.youtube.com/playlist?list=PLjwdMgw5TTLVVJHvstDYgqTCao-e-BgA8
+=> IDE ruby "rubybmine": https://www.jetbrains.com/ruby/promo/?source=google&medium=cpc&campaign=10112222624&term=rubymine&content=437127374076&gclid=CjwKCAiA5Y6eBhAbEiwA_2ZWIRjdxU4nIxyVDtUu04OIAX79NcvhdEcuxE5zBbcpKsY-lapZSUpYZBoC_VEQAvD_BwE
+#### install gems: 
+- sudo gem install rails mysql2
+=> installer les gems d'un projet: bundle install
+https://learn.microsoft.com/fr-fr/azure/app-service/quickstart-ruby?tabs=cli#run-the-application-locally
+=> lancer le server rails d'un projet: bundle exec rails server        ou            rails server
+https://learn.microsoft.com/fr-fr/azure/app-service/quickstart-ruby?tabs=cli#run-the-application-locally
+
+### npm packages: 
+- npm install -g localserver sass 
 
 ### SOFTWARES: 
 - sudo apt install git-all virtualbox virtualbox-ext-pack qbittorrent gnome-control-center gnome-online-accounts vim curl
@@ -55,12 +83,15 @@ sudo mv /etc/apt/preferences.d/nosnap.pref /etc/apt/preferences.d/nosnap.pref.ba
 sudo apt install snapd
 sudo reboot
 puis éventuellement installer le gestionnaire graphiue de snap: "sudo snap install snap-store"
-- snap install zoom-client
-- snap install skype --classic
+- essayer plutot avec flatpak:
+sudo snap install zoom-client
+- sudo snap install skype --classic
 ou: flatpak install --from https://flathub.org/repo/appstream/com.skype.Client.flatpakref -y
-- snap install teams-for-linux
+- sudo snap install teams-for-linux
 ou: flatpak install https://dl.flathub.org/repo/appstream/com.github.IsmaelMartinez.teams_for_linux.flatpakref -y
-- snap install whatsapp-for-linux
+- sudo snap install whatsapp-for-linux
+- sudo snap install pyqt5-runtime-core20 ; sudo snap install 4ktube ; sudo apt-get install ubuntu-restricted-extras 
+=> https://korben.info/4ktube-telecharger-video.html
 #### en utilisant la logitèque (.......contenu à modifier, pas pertinent..):
 jdownloader
 wget https://download.edrawsoft.com/archives/edrawmind_9.0.10_en_x86_64.deb?_gl=1*kpwdky*_ga*NTU3Mzc2MDY4LjE2NTcyNDc5NTg.*_ga_24WTSJBD5B*MTY1NzI0Nzk1OC4xLjEuMTY1NzI0ODU0Ni42MA..&_ga=2.18566073.1423041095.1657247958-557376068.1657247958
@@ -81,12 +112,18 @@ ou pour avoir plus d'info sur le module en question:    apt show
 - enfin, le dossier de travail se trouve: 
 /var/www/html/
 il suffira juste de lancer "localhost" dans le navigateur
+- commandes utiles: 
+=> redémarer server: sudo service apache2 restart      ou       sudo systemctl restart apache2
 ### PYTHON: 
 - sudo apt install python3 python3-pip
 ### JE NE ME RAPPEL PLUS C'EST QUOI "gnome-tweaks"....
 - sudo apt install gnome-tweaks 
 
 ---
+## PLACER DES RACCOURCI VERS LE BUREAU: 
+- gnome-disk: https://doc.ubuntu-fr.org/tutoriel/formater_une_cle_usb#:~:text=Si%20vous%20souhaitez%20formater%20compl%C3%A8tement,formater%22%20efface%20toutes%20vos%20donn%C3%A9es%20!
+- les raccourcis de tous les comptes chrome
+
 
 ## INSTALLER GCLOUD POUR GOOGLE CLOUD REPOSITORIES
 
