@@ -76,6 +76,7 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
+    alias lsal='stat -c "%a" '
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -116,6 +117,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#EXPORTER DES VARIABLES D'ENVIRONNEMENT: 
+export VSCODE_KEYBINDINGS=$HOME/Bureau/vscode_snippets_keybordSC_etc/ok.json
+export VSCODE_KEYBINDINGS=$HOME/Bureau/vscode_snippets_keybordSC_etc/ok__.json
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 # ------------------------------------------------------------------
@@ -135,6 +139,7 @@ alias go_vs="cd /home/mirai/.vscode "
 #NAVIGUER SUR LE WEB
 alias chrome="google-chrome "
 alias g="chrome "
+alias g3000="chrome localhost:3000"
 # ------------------------------------------------------------------
 #RACCOUCIS DE COMMANDES GÉNÉRALES----------------------------------
 alias b="vim ~/.bashrc "
@@ -144,8 +149,8 @@ alias sb="sourceb"
 alias xdg="xdg-open . "
 alias lss="ls -alt "
 alias cdd="cd - "
-alias ppp="echo ${$1}"
-alias psgr="ps -aux | grep ${$1} | awk '{print $2}' "
+# alias ppp="echo ${$1}"
+# alias psgr="ps -aux | grep ${$1} | awk '{print $2}' "
 alias psg="ps -aux | grep "
 alias psgl="lsof -i:3000 ; lsof -i:9000 "
 alias _kp3="echo $(lsof -t -i:3000) "
@@ -156,14 +161,20 @@ alias k="kill -9  "
 alias ai="sudo apt install "
 alias mv_wildcard_rename="for x in *.$1; do mv -- "$x" "${x%_done}" done "
 #MYSQL SHORTCUTS
-alias msql="mysql -uroot -p "
+alias msql="echo\"POUR CRÉER UN USER AVEC MOT DE PASSE VIDE, LANCER: 'SET GLOBAL validate_password_policy=OFF'; PUIS ENFIN: 'CREATE USER 'my_user'@'localhost' IDENTIFIED BY '';'\" ; sudo mysql -u root -p "
 #NODEJS ALIASES
 alias c="code . "
+alias C="sudo code . --no-sandbox --user-data-dir=/tmp/vscode"
+alias c_go_to_user="cd /home/samurai/.config/Code/User/snippets "
+alias c_go_to_extensions="cd /home/samurai/.vscode/extensions/ "
+alias c_go_to_baseExtensions="cd /usr/share/code/resources/app/extensions/ "
+alias cclr="cd ~/.vscode/Code ; rm -rf CachedData ; code --clear-cache "
+alias ncat="cat ./package.json "
 alias n="npm run "
 alias ns="npm run start "
 alias _ns="npm run _start "
-alias nsr="npm run start_cra "
-alias ns_="export NODE_OPTIONS=--openssl-legacy-provider ; npm run start "
+#alias nsr="npm run start_cra "
+alias nsr="export NODE_OPTIONS=--openssl-legacy-provider ; npm run start "
 alias nss="npm run sass "
 alias nd="npm run dev "
 alias nb="npm run build "
@@ -173,6 +184,7 @@ alias nr="npm run "
 alias ninit="npm init "
 alias ny="ninit -y "
 alias ni="npm install "
+alias nI="npm install -f "
 alias nig="sudo npm install -g "
 alias nii="npm ci "
 alias nr="npm remove "
@@ -188,6 +200,10 @@ alias rcra_="rcra cra "
 alias rnia="ni react-router-dom ; ni prop-types ; ni styled-components "
 # ---------CODEBASE CREATION----------------------------------
 #LES COMMANDE D'ARCHIVAGE "tar": https://www.sebastien-gandossi.fr/blog/comment-creer-et-extraire-une-archive-tar-tar-gz-tar-bz2-ou-tar-xz
+function mkd(){
+	mkdir -p "$1" 
+	cd "$1" 
+}
 alias rmd="rm -rf "
 alias t_help="echo 'https://fr.wikihow.com/archiver-un-r%C3%A9pertoire-avec-la-commande-%C2%AB-tar-%C2%BB' ; echo 'https://forums.commentcamarche.net/forum/affich-37621996-linux-compresser-decompresser-un-fichier-zip' "
 alias t="echo\"tar nom_de_l_archive.tar nom_du_dossier_a_archiver\" ; tar cvf "
@@ -289,8 +305,8 @@ alias gbr="echo '!!!LEGACY_COMMENT!!! après cette commande vous devrez utiliser
 https://fr.w3docs.com/snippets/git/how-to-rename-git-local-and-remote-branches-1.html' ;
 echo \"git push origin :old-name new-name \"
 echo \"git push origin -u new-name \" 
-git branch -m ; git push origin -u "
-alias gbr_="git push origin -u "
+git branch -m "
+alias gbR="git push origin -u "
 alias gba="git branch -a "
 alias gbd="git branch -D "
 alias gb_="git branch --set-upstream-to=origin/main main "
@@ -350,6 +366,9 @@ alias gacmp_="gacm ; gp_ "
 alias gacmP="gacm ; gP "
 alias gacmpup="gacm ; gpup "
 alias gacmPup="gacm ; gPup "
+###CHERRY
+alias gchp="git cherry-pick "
+alias gchp_="git cherry-pick --continue "
 ###DIFF
 alias gd="git diff "
 alias gconf="git diff --name-only --diff-filter=U "
@@ -411,7 +430,9 @@ alias gcl="git clone "
 ### SUBMODULE
 alias gsub="git submodule "
 alias gsuba="gsub add "
+alias gsubu_chatgpt="git submodule foreach --recursive git fetch "
 alias gsubu="gsub update "
+alias gsubu_NANI="gsub update --init --ignore-errors "
 alias gsubu_="gsub update --init "
 alias gsubU="gsubu_ ; gsubu "
 alias gsubr="echo '- https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule#answer-1260982

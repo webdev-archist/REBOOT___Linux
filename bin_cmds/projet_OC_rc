@@ -1,0 +1,30 @@
+
+
+echo "entrer le numéro du projet.\n Projet n° ?"
+read numprojet
+echo "entrer l'url du projet (sans le / à la fin)"
+read urlprojet
+echo "entrer le titre du projet."
+read titleprojet
+
+echo "souhaitez faire un submodule(1) ou un clone(0)"
+read subm_or_clone
+
+
+
+
+if $subm_or_clone -ge 1
+then
+	git submodule add git@github.com:mentor-OC-archist/TEMPLATE_new_OC_project.git P$numprojet
+else
+	git clone git@github.com:mentor-OC-archist/TEMPLATE_new_OC_project.git P$numprojet
+fi
+cd "P$numprojet"
+
+
+
+sed -i -e "s/numprojet/${numprojet}/g" README.md
+sed -i -e "s/titleprojet/${titleprojet}/g" README.md
+sed -i -e "s/urlprojet/${urlprojet}/g" README.md
+
+

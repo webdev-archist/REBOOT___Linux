@@ -19,7 +19,7 @@ case $1 in
 #		rm -rf src/assets/scss/.git
 		git rm -rf src
 		rm -rf src
-		git clone git@github.com:achicyr/react_base_structure.git src
+		git clone https://github.com/achicyr/react_base_structure src
 		cd src 
 		git checkout develop
 		git submodule update --init

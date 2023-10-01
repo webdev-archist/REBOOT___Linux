@@ -31,6 +31,8 @@ sudo apt-get install -y nodejs
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt install yarn
+#### pnpm:
+https://pnpm.io/installation#using-npm
 
 ### RUBY: https://docs.google.com/spreadsheets/d/1Qd4R2oJZmw3Qi5X207j_BldoCBVEAlAKqHrBeXsJXGk/edit#gid=0
 https://www.ruby-lang.org/en/documentation/installation/
@@ -49,12 +51,14 @@ https://learn.microsoft.com/fr-fr/azure/app-service/quickstart-ruby?tabs=cli#run
 https://learn.microsoft.com/fr-fr/azure/app-service/quickstart-ruby?tabs=cli#run-the-application-locally
 
 ### npm packages: 
-- npm install -g localserver sass 
+- npm install -g localserver sass prisma mongodb nodemon 
 
 ### SOFTWARES: 
 - sudo apt install git-all virtualbox virtualbox-ext-pack qbittorrent gnome-control-center gnome-online-accounts vim curl
 - then, XDG_CURRENT_DESKTOP=GNOME gnome-control-center, aller sur comptes en ligne, choisir google, s'identifier et c'est fini
 => [lien source](https://www.linuxuprising.com/2018/07/mounting-google-drive-on-xfce-or-mate.html)
+- Dev tools
+mongodb compass: 
 #### vscode: 
 - wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
@@ -82,7 +86,7 @@ ou bien exécuter dans terminal:
 sudo mv /etc/apt/preferences.d/nosnap.pref /etc/apt/preferences.d/nosnap.pref.bak
 sudo apt install snapd
 sudo reboot
-puis éventuellement installer le gestionnaire graphiue de snap: "sudo snap install snap-store"
+puis éventuellement installer le gestionnaire graphique de snap: "sudo snap install snap-store"
 - essayer plutot avec flatpak:
 sudo snap install zoom-client
 - sudo snap install skype --classic
@@ -90,8 +94,15 @@ ou: flatpak install --from https://flathub.org/repo/appstream/com.skype.Client.f
 - sudo snap install teams-for-linux
 ou: flatpak install https://dl.flathub.org/repo/appstream/com.github.IsmaelMartinez.teams_for_linux.flatpakref -y
 - sudo snap install whatsapp-for-linux
+- mongodb compass: 
+flatpak install flathub com.mongodb.Compass
+- postman
+flatpak install flathub com.getpostman.Postman
 - sudo snap install pyqt5-runtime-core20 ; sudo snap install 4ktube ; sudo apt-get install ubuntu-restricted-extras 
 => https://korben.info/4ktube-telecharger-video.html
+- sudo snap install redis redis-tools
+=> https://redis.io/commands/
+- snap install mysql-workbench-community
 #### en utilisant la logitèque (.......contenu à modifier, pas pertinent..):
 jdownloader
 wget https://download.edrawsoft.com/archives/edrawmind_9.0.10_en_x86_64.deb?_gl=1*kpwdky*_ga*NTU3Mzc2MDY4LjE2NTcyNDc5NTg.*_ga_24WTSJBD5B*MTY1NzI0Nzk1OC4xLjEuMTY1NzI0ODU0Ni42MA..&_ga=2.18566073.1423041095.1657247958-557376068.1657247958
@@ -154,9 +165,9 @@ bon , il y a plein de truc à faire, je n'ai pas encore vraiment compris comment
 ## ASTUCES (linux):
 - afficher les fichiers/dossiers cachés => dans le dossier, faire: Ctrl+h
 ## ASTUCES (bash):
-- voir la corbeille: ls -a ~/.Trash
-=> supprimer le contenu de la corbeille: rm -r ~/.Trash
-=> autre lien concernant la [corbeille](https://forum.ubuntu-fr.org/viewtopic.php?id=12650)
+- ouvrir la corbeille: xdg-open ~/.local/share/Trash/files
+ls -a ~/.local/share/Trash/files
+=> supprimer le contenu de la corbeille: rm -r ~/.local/share/Trash
 - lister les périphérique du pc: lsblk, ou encore, df
 - formater un périphérique:
 => [mkfs](https://www.malekal.com/mkfs-formater-et-creer-un-systeme-de-fichiers-ext4-ntfs-fat-sur-linux/)
