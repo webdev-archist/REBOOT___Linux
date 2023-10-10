@@ -161,7 +161,7 @@ alias k="kill -9  "
 alias ai="sudo apt install "
 alias mv_wildcard_rename="for x in *.$1; do mv -- "$x" "${x%_done}" done "
 #MYSQL SHORTCUTS
-alias msql="echo\"POUR CRÉER UN USER AVEC MOT DE PASSE VIDE, LANCER: 'SET GLOBAL validate_password_policy=OFF'; PUIS ENFIN: 'CREATE USER 'my_user'@'localhost' IDENTIFIED BY '';'\" ; sudo mysql -u root -p "
+alias msql="echo\"https://ostechnix.com/fix-mysql-error-1819-hy000-your-password-does-not-satisfy-the-current-policy-requirements/\r\nPOUR CRÉER UN USER AVEC MOT DE PASSE VIDE, LANCER: 'UNINSTALL COMPONENT \"file://component_validate_password\";'; PUIS: 'CREATE USER 'my_user'@'localhost' IDENTIFIED BY ''; then: 'GRANT ALL PRIVILEGES ON *.* TO 'my_user'@'%';';then: 'FLUSH PRIVILEGES;'; \r\nET ENFIN: 'INSTALL COMPONENT \"file://component_validate_password\";'\" ; sudo mysql -u root -p "
 #NODEJS ALIASES
 alias c="code . "
 alias C="sudo code . --no-sandbox --user-data-dir=/tmp/vscode"

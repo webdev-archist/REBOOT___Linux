@@ -66,6 +66,11 @@ sudo apt update
 sudo apt install code
 - voici le repo des snippets et kbsc: https://github.com/webdev-archist/vscode_snippets_keybordSC_etc
 => [other instructions here](https://www.how2shout.com/linux/3-ways-install-visual-studio-code-in-ubuntu-using-terminal/)
+- Plugins:
+  - mysql: https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-mysql-client2
+  - graphQL: https://marketplace.visualstudio.com/items?itemName=chris-noring.graphql-snippets
+https://marketplace.visualstudio.com/items?itemName=code4mk.apollo-graphql-snippets
+https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql
 #### logiciels de retouche vidéo: 
 - sudo add-apt-repository ppa:obsproject/obs-studio
 - sudo apt install gimp handbrake shotcut obs-studio 
