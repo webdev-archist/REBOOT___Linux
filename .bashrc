@@ -125,8 +125,10 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # ------------------------------------------------------------------
 alias smartgit="~/Téléchargements/smartgit/bin/smartgit.sh"
 #POUR SE DÉPLACER DANS L'ARCHITECTURE DE FICHIER ----------------------
+alias lversion="lsb_release -d "
 alias aptgetup="sudo apt-get update ; sudo apt-get upgrade -y "
 alias mk_mapDOM="go_mapDOM ; xdg ; code . ; nw_ & google-chrome http://localhost:9000 "
+alias go_nodeG="cd /usr/local/lib/node_modules "
 alias go_="cd /home/mirai/Bureau/WEBPROJECTS/WEBPROJECT__jlpt "
 alias go_mapDOM="cd /home/mirai/Bureau/WEBPROJECTS/BOOTSTARTER/_/builders/PROJECTS___mapDOM "
 alias go_cjs="cd /home/mirai/Bureau/WEBPROJECTS/PROJECT___BootStarter/_/builders/CJS/ "
@@ -163,10 +165,11 @@ alias mv_wildcard_rename="for x in *.$1; do mv -- "$x" "${x%_done}" done "
 #MYSQL SHORTCUTS
 alias msql="echo\"https://ostechnix.com/fix-mysql-error-1819-hy000-your-password-does-not-satisfy-the-current-policy-requirements/\r\nPOUR CRÉER UN USER AVEC MOT DE PASSE VIDE, LANCER: 'UNINSTALL COMPONENT \"file://component_validate_password\";'; PUIS: 'CREATE USER 'my_user'@'localhost' IDENTIFIED BY ''; then: 'GRANT ALL PRIVILEGES ON *.* TO 'my_user'@'%';';then: 'FLUSH PRIVILEGES;'; \r\nET ENFIN: 'INSTALL COMPONENT \"file://component_validate_password\";'\" ; sudo mysql -u root -p "
 #NODEJS ALIASES
+alias cl="clear "
 alias c="code . "
 alias C="sudo code . --no-sandbox --user-data-dir=/tmp/vscode"
-alias c_go_to_user="cd /home/samurai/.config/Code/User/snippets "
-alias c_go_to_extensions="cd /home/samurai/.vscode/extensions/ "
+alias c_go_to_user="cd /home/tsubuyaki/.config/Code/User/snippets "
+alias c_go_to_extensions="cd /home/tsubuyaki/.vscode/extensions/ "
 alias c_go_to_baseExtensions="cd /usr/share/code/resources/app/extensions/ "
 alias cclr="cd ~/.vscode/Code ; rm -rf CachedData ; code --clear-cache "
 alias ncat="cat ./package.json "
@@ -426,7 +429,8 @@ alias webdev_="git clone https://github.com/achicyr/SCSS-BEM____BlockElementModi
 alias gradd="git remote add origin "
 alias grsupp="git remote remove origin "
 ### GIT CLONE
-alias gcl="git clone "
+alias gcl="git clone "	
+#alias gcl="git clone $1; cd $1 "	
 ### SUBMODULE
 alias gsub="git submodule "
 alias gsuba="gsub add "
@@ -503,3 +507,7 @@ if [ -f '/home/hikari/Téléchargements/google-cloud-sdk/path.bash.inc' ]; then 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/hikari/Téléchargements/google-cloud-sdk/completion.bash.inc' ]; then . '/home/hikari/Téléchargements/google-cloud-sdk/completion.bash.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

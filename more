@@ -1,0 +1,32 @@
+cd ~/.ssh ; chmod 600 id_rsa
+
+
+sudo add-apt-repository ppa:obsproject/obs-studio
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt update
+sudo apt install code
+(mint) sudo mv /etc/apt/preferences.d/nosnap.pref /etc/apt/preferences.d/nosnap.pref.bak
+sudo apt install snapd
+sudo reboot
+sudo snap install snap-store
+
+NODEJS et NVM:
+- sudo snap install node --classic
+then install nvm: https://github.com/nvm-sh/nvm#installing-and-updating
+- curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+finally, change the version of node via nvm: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04-fr
+or https://www.freecodecamp.org/news/how-to-update-node-and-npm-to-the-latest-version/
+Installer la dernière version: 
+- nvm install node 
+Installer la version lts (long-terme-service): 
+- nvm install --lts 
+
+git-all: https://askubuntu.com/questions/796600/difference-between-installing-git-vs-installing-git-all
+
+
+npm install -g yarn@latest n npm@latest 
+
+
+apt-install ...
+
