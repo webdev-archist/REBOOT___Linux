@@ -1,0 +1,79 @@
+#VÉRIFIER QUE L'ON SE TROUVE BIEN DANS UN DOSSIER NOMMÉ "**/OC/STUDENTS/"
+developpeurWeb___idPath=899
+
+
+
+echo "Quel est le nom de l'étudiant.e ?"
+read studentName
+cp -r ./___modele___ ./$studentName
+cd "${studentName}"
+rm -rf ./___modele___
+
+echo "Entrer le numéro id du parcours \(899 par défaut pour \"Développeur-web\", ..id à daté de 03/2024\).\nPS: Ce numéro s'affiche dans la barre url de la page du parcours OC concerné.\n"
+read idPath
+# echo "$idPath"
+# echo "---"
+if [ "$idPath" == "" ];then idPath=$developpeurWeb___idPath; fi
+sed -i -e "s/idPath/${idPath}/g" README.md
+if [ "$idPath" == 899 ]
+then
+    declare -a projectsId_Array=(1690 1332 1157 1333 1334 1247 1335 1336)
+    for i in "${!projectsId_Array[@]}"
+    do
+        j=$((i+1))
+        echo "${projectsId_Array[i]}"
+        echo "idP$j"
+        sed -i -e "s/\/idP$j\//\/${projectsId_Array[i]}\//g" README.md
+    done
+else
+    echo ".........TROUVER COMMENT RÉCUPÉRER LES BONS ID DU POARCOURS CONCERNÉ........."
+    declare -a projectsId_Array=()
+fi
+
+
+echo "Entrer le numéro de l'élève.\n\(PS: Ce numéro s'affiche dans la barre url de la page de votre élève\)\n "
+read idStudent
+sed -i -e "s/idStudent/${idStudent}/g" README.md
+
+
+
+echo "Entrer le lien git de l'élève: "
+read gitUrl
+if [ "$gitUrl" == "" ];then gitUrl="???";fi
+sed -i -e "s/gitUrl/${gitUrl}/g" README.md
+
+echo "Entrer l'email de l'élève: "
+read email
+if [ "$whatsapp" == "" ];then whatsapp="???";fi
+sed -i -e "s/email/${email}/g" README.md
+
+echo "Entrer le contact whatsapp de l'élève: "
+read whatsapp
+if [ "$whatsapp" == "" ];then whatsapp="???";fi
+sed -i -e "s/whatsapp/${whatsapp}/g" README.md
+
+echo "Entrer les outils de visio privilégié avec l'élève: "
+declare -a visioTool=(OC Gmeet WhatsApp)
+read visioTool_
+sed -i -e "s/visioTool/$(echo "${visioTool[@]}") $(echo "${visioTool_}")/g" README.md
+
+
+
+
+
+
+
+# echo "Souhaitez faire un submodule\(1\), ou un clone\(0\) ?\n\(PS: clone\(0\) par défaut\)"
+# read subm_or_clone
+# if $subm_or_clone -ge 1
+# then
+# 	git submodule add git@github.com:mentor-OC-archist/TEMPLATE_new_OC_project.git P$idStudent
+# else
+# 	git clone git@github.com:mentor-OC-archist/TEMPLATE_new_OC_project.git P$idStudent
+# fi
+# cd "P${idStudent}"
+
+
+
+
+

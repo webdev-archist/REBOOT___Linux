@@ -51,7 +51,7 @@ https://learn.microsoft.com/fr-fr/azure/app-service/quickstart-ruby?tabs=cli#run
 https://learn.microsoft.com/fr-fr/azure/app-service/quickstart-ruby?tabs=cli#run-the-application-locally
 
 ### npm packages: 
-- npm install -g localserver sass prisma mongodb nodemon 
+- npm install -g localserver sass prisma mongodb nodemon apollo
 
 ### SOFTWARES: 
 - sudo apt install git-all virtualbox virtualbox-ext-pack qbittorrent gnome-control-center gnome-online-accounts vim curl
