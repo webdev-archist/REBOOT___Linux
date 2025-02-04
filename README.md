@@ -57,6 +57,7 @@ https://learn.microsoft.com/fr-fr/azure/app-service/quickstart-ruby?tabs=cli#run
 - sudo apt install git-all virtualbox virtualbox-ext-pack qbittorrent gnome-control-center gnome-online-accounts vim curl
 - then, XDG_CURRENT_DESKTOP=GNOME gnome-control-center, aller sur comptes en ligne, choisir google, s'identifier et c'est fini
 => [lien source](https://www.linuxuprising.com/2018/07/mounting-google-drive-on-xfce-or-mate.html)
+- Autres alternatives drive: https://doc.ubuntu-fr.org/google_drive
 - Dev tools
 mongodb compass: 
 #### vscode: 
